@@ -1,0 +1,96 @@
+&CONTROL
+calculation = "relax"
+nstep = 200
+etot_conv_thr = 1.0d-5
+forc_conv_thr = 1.0d-4
+disk_io = "none"
+pseudo_dir = '/opt/QEpot/SSSP_efficiency_pseudos/'
+tprnfor = .true.
+tstress = .true.
+verbosity = 'high'
+dt = 50
+/
+&SYSTEM
+ntyp =  5
+occupations = 'smearing' !
+smearing = "gaussian"
+degauss = 0.05
+ecutrho = 320
+ecutwfc = 40
+ibrav = 0
+nat = 36
+nosym = .TRUE.
+!vdw_corr = 'DFT-D3' !you may modify it using ModQEsetting.pl
+starting_magnetization(1) =   1.0000000000d-01
+starting_magnetization(2) =   3.8461538462d-01
+starting_magnetization(3) =   4.1666666667d-01
+starting_magnetization(4) =   3.8461538462d-01
+starting_magnetization(5) =   4.1666666667d-01
+nspin = 2
+/
+&ELECTRONS
+conv_thr = 2.d-5
+electron_maxstep = 150
+mixing_beta = 0.1
+mixing_mode = "plain"
+mixing_ndim = 4
+diagonalization = "david"
+diago_david_ndim = 2
+/
+&IONS
+ion_dynamics = "damp"
+ion_temperature = "rescaling"
+tempw = 300
+/
+K_POINTS {automatic}
+3 3 4 0 0 0
+ATOMIC_SPECIES
+Al     26.9815385 Al.pbe-n-kjpaw_psl.1.0.0.UPF
+Nb     92.90637 Nb.pbe-spn-kjpaw_psl.0.3.0.UPF
+Ti     47.867 ti_pbe_v1.4.uspp.F.UPF
+V     50.9415 v_pbe_v1.4.uspp.F.UPF
+Zr     91.224 Zr_pbe_v1.uspp.F.UPF
+
+! --- 3D Bulk Elastic Data: ShearXZ -1.00% ---
+CELL_PARAMETERS (angstrom)
+   9.793115583    0.063154538   -0.017426878
+   0.063027461    9.847948070    0.025099711
+  -0.012081784    0.016943657    6.621516916
+
+ATOMIC_POSITIONS (angstrom)
+Al     0.154965495    0.129432551    0.048401101
+Al     1.823709914    1.621201273    1.656574088
+Nb     3.272544577   -0.192513321   -0.142625588
+Zr     4.947967944    1.647313891    1.593520766
+Al     6.341828779   -0.214829010   -0.112077368
+V      8.105236397    1.806533998    1.654285103
+Nb    -0.032384177    3.287602014    0.114446910
+Nb     1.643071947    5.034791685    1.697055585
+Zr     3.308474070    3.437787978   -0.033465461
+Ti     4.879633156    5.128819977    1.771416930
+Al     6.556155965    3.579944570    0.205531331
+Nb     8.252234925    5.121494231    1.752003048
+V      0.196066024    6.541463567    0.058356780
+Nb     1.703234150    8.146480457    1.643295235
+Al     3.268535509    6.588607649   -0.182175176
+Nb     4.853324639    8.052565312    1.703514455
+Nb     6.523778498    6.627982314   -0.020628835
+Zr     8.306280932    8.214560838    1.572725542
+Zr     0.012964515    0.064285618    3.340662222
+Ti     1.698988445    1.715496493    4.987739198
+Ti     3.223409936   -0.191460343    3.420818532
+Ti     4.907146850    1.695047219    4.943830315
+Zr     6.499464761   -0.057016729    3.362822184
+Zr     8.002215208    1.804308143    5.108953844
+Nb    -0.016749612    3.276026906    3.298299544
+Ti     1.424309990    4.946589880    4.999123203
+Ti     3.218256725    3.388890842    3.326908179
+Zr     5.130287814    4.944015484    4.753001211
+V      6.684810501    3.347628433    3.042931376
+Ti     8.253729319    5.115046594    4.934662710
+V      0.211244205    6.604815574    3.349750257
+V      1.515493347    8.196160231    5.047813323
+Al     3.104021738    6.636340201    3.511303841
+V      4.936176752    8.084638788    4.882468222
+V      6.623494081    6.687238643    3.295305559
+Al     8.337834150    8.105597332    5.022869420

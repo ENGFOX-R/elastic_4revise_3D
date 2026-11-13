@@ -1,0 +1,20 @@
+# Ignore Quantum ESPRESSO raw stdout logs (~4.9 GB)
+*.sout
+*.sout.gz
+
+# Ignore intermediate MD step frame data dumps (~23,000 files in subdirectories)
+data_files/
+**/data_files/
+
+# Ignore Slurm batch output logs
+slurm-*.out
+*.out
+
+# Python and OS temporary files
+__pycache__/
+*.py[cod]
+*$py.class
+.DS_Store
+*.swp
+*.swo
+*~

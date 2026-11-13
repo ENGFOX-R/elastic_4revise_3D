@@ -1,0 +1,99 @@
+&CONTROL
+calculation = "vc-relax"
+nstep = 200
+etot_conv_thr = 1.0d-5
+forc_conv_thr = 1.0d-4
+disk_io = "none"
+pseudo_dir = '/opt/QEpot/SSSP_efficiency_pseudos/'
+tprnfor = .true.
+tstress = .true.
+verbosity = 'high'
+dt = 50
+/
+&SYSTEM
+ntyp =  5
+occupations = 'smearing' !
+smearing = "gaussian"
+degauss = 0.05
+ecutrho = 320
+ecutwfc = 40
+ibrav = 0
+nat = 36
+nosym = .TRUE.
+!vdw_corr = 'DFT-D3' !you may modify it using ModQEsetting.pl
+starting_magnetization(1) =   1.0000000000d-01
+starting_magnetization(2) =   3.8461538462d-01
+starting_magnetization(3) =   4.1666666667d-01
+starting_magnetization(4) =   3.8461538462d-01
+starting_magnetization(5) =   4.1666666667d-01
+nspin = 2
+/
+&ELECTRONS
+conv_thr = 2.d-5
+electron_maxstep = 150
+mixing_beta = 0.1
+mixing_mode = "plain"
+mixing_ndim = 4
+diagonalization = "david"
+diago_david_ndim = 2
+/
+&IONS
+ion_dynamics = "damp"
+ion_temperature = "rescaling"
+tempw = 300
+/
+&CELL
+press = 0
+cell_dynamics = "damp-pr"
+press = 0
+cell_dofree = "all"
+/
+K_POINTS {automatic}
+3 3 4 0 0 0
+ATOMIC_SPECIES
+Al     26.9815385 Al.pbe-n-kjpaw_psl.1.0.0.UPF
+Nb     92.90637 Nb.pbe-spn-kjpaw_psl.0.3.0.UPF
+Ti     47.867 ti_pbe_v1.4.uspp.F.UPF
+V     50.9415 v_pbe_v1.4.uspp.F.UPF
+Zr     91.224 Zr_pbe_v1.uspp.F.UPF
+ATOMIC_POSITIONS {angstrom}
+Al 0.027010 -0.012021 0.039099
+Al 1.629251 1.607360 1.655896
+Nb 3.355040 0.014630 0.026624
+Zr 4.936632 1.686125 1.693791
+Al 6.621659 -0.047313 0.033479
+V 8.277635 1.658381 1.605744
+Nb -0.030159 3.347497 0.003324
+Nb 1.685939 5.010880 1.638085
+Zr 3.309765 3.288069 0.027977
+Ti 4.980601 4.993983 1.679035
+Al 6.627169 3.274374 -0.011194
+Nb 8.262467 4.929207 1.627221
+V 0.008669 6.585313 -0.011326
+Nb 1.613243 8.257154 1.653718
+Al 3.296604 6.651379 0.024633
+Nb 5.004847 8.250727 1.699367
+Nb 6.639611 6.658241 0.043960
+Zr 8.259530 8.305088 1.686761
+Zr 0.041034 0.002255 3.306293
+Ti 1.687344 1.692780 4.965081
+Ti 3.274576 -0.035965 3.309357
+Ti 4.934010 1.639104 4.928016
+Zr 6.581093 0.022325 3.290268
+Zr 8.234858 1.626675 4.930218
+Nb -0.011379 3.329161 3.351823
+Ti 1.650880 4.936053 4.979204
+Ti 3.272423 3.355515 3.263332
+Zr 4.942753 4.966154 5.005965
+V 6.639398 3.298988 3.314991
+Ti 8.304040 4.942930 4.914249
+V 0.015852 6.610499 3.301826
+V 1.673604 8.279156 5.007540
+Al 3.279697 6.584295 3.336515
+V 4.984126 8.278076 4.914641
+V 6.617821 6.609282 3.264984
+Al 8.317558 8.295944 4.956104
+CELL_PARAMETERS {angstrom}
+9.922555 0.00 0.00
+0.000000 9.922555 0.00
+0.000000 0.000000 6.615037
