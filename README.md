@@ -62,9 +62,6 @@ This repository contains the complete calculation inputs, execution scripts, str
 elastic_4revise_3D/
 ├── README.md                                  # Repository documentation
 ├── .gitignore                                 # Excludes large raw .sout outputs (~5 GB)
-├── vc-relax_output/                           # Baseline zero-strain relaxation
-│   ├── Al05NbTiVZr05.in / .data               # Equilibrium supercell structure
-│   └── AlNbTiVZr.in / .data                   # Equilibrium supercell structure
 ├── Al05NbTiVZr05/
 │   ├── analyze_elastic_plotver_robust.py      # Regression analysis and plotting tool
 │   ├── result/                                # Final 3D figures and summary tables
